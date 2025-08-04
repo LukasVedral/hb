@@ -1,13 +1,13 @@
 ---
-title: "Název ročníku"
-year: 2023
-body: "Popis ročníku"
+title: "Testovací ročník"
+year: 2024
+body: "Zde bude popis ročníku."
 vysledky:
   - label: "Muži"
-    url: "https://..."
+    url: "https://example.com/vysledky-muzi"
 gallery:
-  - from: "Foto team"
-    image: "/images/uploads/abc.jpg"
-    link: "https://..."
-video: "https://youtube.com/..."
+  - from: "Honza"
+    image: "/images/uploads/honza.jpg"
+    link: "https://example.com/galerie"
+video: "https://youtube.com/watch?v=dQw4w9WgXcQ"
 ---
