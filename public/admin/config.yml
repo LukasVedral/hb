@@ -7,31 +7,26 @@ public_folder: "/images/uploads"
 
 
 collections:
-  - name: "rocniky"
-    label: "Ročníky závodů"
+  - name: "years"
+    label: "Ročníky"
     folder: "src/years"
     create: true
     slug: "{{year}}-{{title}}"
     fields:
-      - { label: "Název", name: "title", widget: "string" }
-      - { label: "Rok", name: "year", widget: "number" }
-      - { label: "Popis", name: "body", widget: "markdown" }
-
-      - label: "Odkazy na výsledky"
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Year", name: "year", widget: "number" }
+      - { label: "Body", name: "body", widget: "text" }
+      - label: "Vysledky"
         name: "vysledky"
         widget: "list"
-        summary: "{{label}}"
         fields:
-          - { label: "Kategorie", name: "label", widget: "string" }
+          - { label: "Label", name: "label", widget: "string" }
           - { label: "URL", name: "url", widget: "string" }
-
-      - label: "Galerie"
+      - label: "Gallery"
         name: "gallery"
         widget: "list"
-        summary: "{{image}}"
         fields:
-          - { label: "Od-Koho", name: "from", widget: "string" }
-          - { label: "Obrázek", name: "image", widget: "image" }
-          - { label: "Odkaz na galerii", name: "link", widget: "string" }
-
-      - { label: "Video ročníku", name: "video", widget: "string" }
+          - { label: "From", name: "from", widget: "string" }
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Link", name: "link", widget: "string" }
+      - { label: "Video", name: "video", widget: "string" }
