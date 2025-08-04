@@ -1,13 +1,9 @@
 backend:
-  name: git-gateway
-  branch: main
+  name: test-repo
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
-site_url: "https://harblo.netlify.app"
-root_url: "/admin/"
-publish_mode: editorial_workflow
 
 
 collections:
