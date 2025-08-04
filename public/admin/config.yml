@@ -1,17 +1,21 @@
 backend:
-  name: test-repo
+  name: git-gateway
+  branch: main
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
+
+site_url: "https://harblo.netlify.app"
+root_url: "/admin/"
+publish_mode: editorial_workflow
+
 
 collections:
   - name: "rocniky"
     label: "Ročníky závodů"
     folder: "src/years"
     create: true
-    identifier_field: "title"
-    slug: "{{year}}-{{slug}}"
-    path: "{{slug}}.md"
+    slug: "{{slug}}"
     fields:
       - { label: "Název", name: "title", widget: "string" }
       - { label: "Rok", name: "year", widget: "number" }
