@@ -1,13 +1,14 @@
 backend:
-  name: test-repo
-
+  name: git-gateway
+  branch: main
+  
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
   - name: "rocniky"
     label: "Ročníky závodů"
-    folder: "src/rocniky"
+    folder: "src/years"
     create: true
     identifier_field: "title"
     slug: "{{year}}-{{slug}}"
