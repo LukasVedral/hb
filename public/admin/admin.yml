@@ -1,0 +1,35 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "rocniky"
+    label: "Ročníky závodů"
+    folder: "src/rocniky"
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - { label: "Název", name: "title", widget: "string" }
+      - { label: "Rok", name: "year", widget: "number" }
+      - { label: "Popis", name: "body", widget: "markdown" }
+
+      - label: "Odkazy na výsledky"
+        name: "vysledky"
+        widget: "list"
+        summary: "{{fields.label}}"
+        field:
+          - { label: "Kategorie", name: "label", widget: "string" }
+          - { label: "URL", name: "url", widget: "string" }
+
+      - label: "Galerie"
+        name: "gallery"
+        widget: "list"
+        summary: "{{fields.image}}"
+        field:
+          - { label: "Obrázek", name: "image", widget: "image" }
+          - { label: "Odkaz na galerii", name: "link", widget: "string" }
+
+      - { label: "Video ročníku", name: "video", widget: "string" }
