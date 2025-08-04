@@ -9,6 +9,7 @@ collections:
     label: "Ročníky závodů"
     folder: "src/rocniky"
     create: true
+    identifier_field: "title"
     slug: "{{year}}-{{slug}}"
     path: "{{slug}}.md"
     fields:
@@ -19,7 +20,7 @@ collections:
       - label: "Odkazy na výsledky"
         name: "vysledky"
         widget: "list"
-        summary: "{{fields.label}}"
+        summary: "{{label}}"
         fields:
           - { label: "Kategorie", name: "label", widget: "string" }
           - { label: "URL", name: "url", widget: "string" }
@@ -27,8 +28,9 @@ collections:
       - label: "Galerie"
         name: "gallery"
         widget: "list"
-        summary: "{{fields.image}}"
+        summary: "{{image}}"
         fields:
+          - { label: "Od-Koho", name: "from", widget: "string" }
           - { label: "Obrázek", name: "image", widget: "image" }
           - { label: "Odkaz na galerii", name: "link", widget: "string" }
 
