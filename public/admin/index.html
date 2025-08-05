@@ -11,7 +11,7 @@
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
       const auth0 = await createAuth0Client({
-        domain: "harcovskybloudil.eu.auth0.com",
+        domain: "import.meta.env.VITE_AUTH0_DOMAIN",
         client_id: "YcOtnn5mhonzRJrE7LP0x1FaNj3sINtV",
         redirect_uri: window.location.origin + "/admin"
       });
@@ -23,7 +23,7 @@
     
       const token = await auth0.getTokenSilently();
 
-      
+
     
       // Inicializace Decap CMS s tokenem
       CMS.init({
