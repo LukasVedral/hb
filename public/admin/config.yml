@@ -1,6 +1,10 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: lukasvedral/hb
   branch: main
+  base_url: https://harblo.netlify.app
+  auth_endpoint: /admin
+
 
 auth0:
   audience: ${AUTH0_AUDIENCE}
