@@ -9,5 +9,34 @@
   <body>
     <!-- Include the script that builds the page and powers Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      const auth0 = await createAuth0Client({
+        domain: "harcovskybloudil.eu.auth0.com",
+        client_id: "YcOtnn5mhonzRJrE7LP0x1FaNj3sINtV",
+        redirect_uri: window.location.origin + "/admin"
+      });
+    
+      const isAuthenticated = await auth0.isAuthenticated();
+      if (!isAuthenticated) {
+        await auth0.loginWithRedirect();
+      }
+    
+      const token = await auth0.getTokenSilently();
+
+      
+    
+      // Inicializace Decap CMS s tokenem
+      CMS.init({
+        config: {
+          backend: {
+            name: "github",
+            repo: "lukasvedral/hb",
+            branch: "main",
+            auth_token: token
+          },
+          // další nastavení...
+        }
+      });
+    </script>
   </body>
 </html>
