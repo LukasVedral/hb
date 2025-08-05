@@ -1,0 +1,6 @@
+[build]
+  publish = "public"
+  command = "npm run build"
+
+[build.environment]
+SECRETS_SCAN_OMIT_KEYS = "AUTH0_AUDIENCE,AUTH0_DOMAIN,AUTH0_CLIENT_ID"
