@@ -1,6 +1,11 @@
 backend:
-  name: git-gateway
-  branch: main
+  name: github
+  repo: tvůj-uživatel/tvůj-repozitář
+  auth_scope: repo
+
+auth:
+  client_id: "${AUTH0_CLIENT_ID}"
+  domain: "${AUTH0_DOMAIN}"
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"

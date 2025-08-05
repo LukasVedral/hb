@@ -16,12 +16,4 @@ export default defineConfig({
       },
     },
   },
-  plugins: [
-    copy({
-      targets: [
-        { src: 'src/years/*', dest: 'dist/years' }
-      ],
-      hook: 'writeBundle'
-    })
-  ]
 });
