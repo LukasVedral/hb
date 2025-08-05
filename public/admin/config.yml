@@ -1,20 +1,14 @@
 backend:
-  name: github
-  repo: tvůj-uživatel/tvůj-repozitář
-  auth_scope: repo
+  name: git-gateway
+  branch: main
 
-auth:
-  client_id: "${AUTH0_CLIENT_ID}"
-  domain: "${AUTH0_DOMAIN}"
+auth0:
+  audience: ${AUTH0_AUDIENCE}
+  domain: ${AUTH0_DOMAIN}
+  client_id: ${AUTH0_CLIENT_ID}
 
-media_folder: "public/images/uploads"
-public_folder: "/images/uploads"
-
-
-site_url: "https://harblo.netlify.app"
-root_url: "/admin/"
-publish_mode: editorial_workflow
-
+media_folder: "public/uploads"
+public_folder: "/uploads"
 
 collections:
   - name: "years"
