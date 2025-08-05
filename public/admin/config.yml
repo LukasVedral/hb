@@ -2,8 +2,7 @@ backend:
   name: github
   repo: lukasvedral/hb
   branch: main
-  base_url: https://harblo.netlify.app
-  auth_endpoint: /admin
+  auth_scope: repo
 
 
 auth0:
