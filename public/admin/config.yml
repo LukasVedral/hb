@@ -2,7 +2,6 @@ backend:
   name: github
   repo: lukasvedral/hb
   branch: main
-  auth_scope: repo
 
 
 auth0:
