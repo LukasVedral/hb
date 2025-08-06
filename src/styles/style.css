@@ -513,6 +513,32 @@
 
 
 
+    /*propozice*/
+    .main__container > .proposition__section{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: start;
+    }
+    .proposition__short{
+      background-color: var(--dark);
+      position: relative;
+    }
+
+    .prop__triangle{
+      position: absolute;
+      width: 100vw;
+      left: -16px;
+    }
+    .triangle--top{
+      transform: translateY(calc(-100% + 1px));
+      top: 0;
+    }
+    .triangle--bottom{
+      bottom: 0;
+      transform: translateY(calc(100% - 1px));
+    }
+
 
 
 
