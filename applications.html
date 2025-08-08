@@ -53,10 +53,32 @@
     
   </header>
   
-  <main>
-    <br>
-    <br>
-    <br>
+  <main class="main__container main--applications">
+    <h1>Přihlášky</h1>
+    <p class="applications__text">V den závodu je možné se přihlásit přímo na prezentaci do max. kapacity 80 závodních dvojic.</p>
+    <a class="btn btn--primary
+    primary--light">
+      Přihlásit se
+    </a>
+
+    <section class="applications__table">
+
+      <table id="zavodnici" class="display">
+        <thead>
+          <tr>
+            <th>Id.</th>
+            <th>Název týmu</th>
+            <th>Kategorie</th>
+            <th>Závodník 1</th>
+            <th>Závodník 2</th>
+            <th>Odhlášení</th>
+          </tr>
+        </thead>
+        <tbody id="table">
+          <!-- řádky budou doplněny JavaScriptem -->
+        </tbody>
+      </table>
+    </section>
   </main>
 
 
@@ -197,5 +219,14 @@
 
   <script type="module" src="./src/scripts/hamburger.js"></script>
   
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+    <script src="./src/scripts/zavodnici-import.js"></script>
+
+
 </body>
 </html>

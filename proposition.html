@@ -54,8 +54,8 @@
         </nav>
     
   </header>
-  
-  <main class="main__container">
+  <div class="prop__container">
+  <main class="main__container main--props">
 
     <h1>Propozice</h1>
     <section class="proposition__section"> 
@@ -67,36 +67,54 @@
       <h2>Kritéria závodů:</h2>
       <p><strong>Účelem</strong> je nasbírat co nejvíce bodů z jednotlivých kontrol v daném časovém limitu. <strong>Kontrola</strong> se započítává při správném označení daného pole v průvodce daným symbolem na kontrole (kleště). V případě <strong>stejného počtu bodů</strong> rozhoduje výsledný čas. <strong>Dvojice se během závodu nesmí rozdělit!!!</strong> <strong>Každý závodí na vlastní nebezpečí.</strong></p>
     </section>
-
+  </main>
     <div class="proposition__short">
-      
-      <svg class="prop__triangle triangle--top" viewBox="0 0 407 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0.999939 75H407.178V1L0.999939 75Z" fill="#231F20" stroke="#231F20"/>
-      </svg>
+
+      <svg class="prop__triangle triangle--top"
+      viewBox="0 0 407 76"
+      preserveAspectRatio="none"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path d="M0.999939 75H407.178V1L0.999939 75Z" fill="#231F20"/>
+    </svg>
 
       <div class="props__item props--time">
         <header>
-          <img src="/images/icons/clock.svg" alt="ikona hodin">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M31.9998 56.0001C35.1516 56.0001 38.2724 55.3793 41.1842 54.1732C44.0961 52.9671 46.7418 51.1992 48.9704 48.9706C51.199 46.742 52.9668 44.0963 54.173 41.1845C55.3791 38.2727 55.9998 35.1518 55.9998 32.0001C55.9998 28.8484 55.3791 25.7275 54.173 22.8157C52.9668 19.9039 51.199 17.2581 48.9704 15.0295C46.7418 12.8009 44.0961 11.0331 41.1842 9.82697C38.2724 8.62086 35.1516 8.00008 31.9998 8.00008C25.6346 8.00008 19.5301 10.5286 15.0293 15.0295C10.5284 19.5304 7.99984 25.6349 7.99984 32.0001C7.99984 38.3653 10.5284 44.4698 15.0293 48.9706C19.5301 53.4715 25.6346 56.0001 31.9998 56.0001ZM61.3332 32.0001C61.3332 48.2001 48.1998 61.3334 31.9998 61.3334C15.7998 61.3334 2.6665 48.2001 2.6665 32.0001C2.6665 15.8001 15.7998 2.66675 31.9998 2.66675C48.1998 2.66675 61.3332 15.8001 61.3332 32.0001ZM39.9998 43.7707L29.3332 33.1041V14.6667H34.6665V30.8961L43.7705 40.0001L39.9998 43.7707Z" fill="#FBFCFF"/>
+          </svg>
           <h2>KDY?</h2>
         </header>
         <div class="date">
-          <img src="/images/icons/date.svg" alt="datum závodu - 5.11.2025">
+          <img src="/images/icons/date-light.svg" alt="datum závodu - 5.11.2025">
           <p class="date__time">V 16:00</p>
         </div>
+        <a class="btn btn--primary
+        primary--light">
+          Přihlásit se
+        </a>
       </div>
-
+      <div class="short__items">
       <div class="info__item">
         <h3>Startovné</h3>
-        <img src="/images/icons/money.svg" alt="ikona peněz">
+        <svg width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32.6663 33.3334C30.191 33.3334 27.817 34.3167 26.0667 36.067C24.3163 37.8174 23.333 40.1914 23.333 42.6667C23.333 45.1421 24.3163 47.516 26.0667 49.2664C27.817 51.0167 30.191 52 32.6663 52C35.1417 52 37.5157 51.0167 39.266 49.2664C41.0163 47.516 41.9997 45.1421 41.9997 42.6667C41.9997 40.1914 41.0163 37.8174 39.266 36.067C37.5157 34.3167 35.1417 33.3334 32.6663 33.3334ZM28.6663 42.6667C28.6663 41.6058 29.0878 40.5884 29.8379 39.8383C30.5881 39.0881 31.6055 38.6667 32.6663 38.6667C33.7272 38.6667 34.7446 39.0881 35.4948 39.8383C36.2449 40.5884 36.6663 41.6058 36.6663 42.6667C36.6663 43.7276 36.2449 44.745 35.4948 45.4951C34.7446 46.2453 33.7272 46.6667 32.6663 46.6667C31.6055 46.6667 30.5881 46.2453 29.8379 45.4951C29.0878 44.745 28.6663 43.7276 28.6663 42.6667Z" fill="#F5821F"/>
+          <path d="M47.4025 13.6427L38.9252 1.75732L7.7545 26.6587L6.0265 26.64V26.6667H4.6665V58.6667H60.6665V26.6667H58.1012L52.9972 11.736L47.4025 13.6427ZM52.4665 26.6667H25.7252L45.6425 19.8773L49.7012 18.5787L52.4665 26.6667ZM42.1332 15.44L21.5732 22.448L37.8558 9.43999L42.1332 15.44ZM9.99984 48.4507V36.8773C11.1256 36.48 12.1482 35.8357 12.9927 34.9918C13.8371 34.1478 14.4819 33.1256 14.8798 32H50.4532C50.8508 33.1261 51.4954 34.1488 52.3399 34.9933C53.1843 35.8377 54.2071 36.4824 55.3332 36.88V48.4533C54.2071 48.8509 53.1843 49.4956 52.3399 50.34C51.4954 51.1845 50.8508 52.2072 50.4532 53.3333H14.8852C14.4857 52.2071 13.8397 51.1844 12.9946 50.3396C12.1494 49.4949 11.1262 48.8496 9.99984 48.4507Z" fill="#F5821F"/>
+        </svg>         
         <p>200 Kč za tým</p>
       </div>
       <div class="info__item">
         <h3>Vybavení</h3>
-        <img src="/images/icons/flashlight.svg" alt="ikona baterky">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M41.25 2L35.915 7.3375L56.6625 28.085L62 22.75L41.25 2Z" fill="#F5821F "/>
+          <path d="M53.6512 30.4812L33.5 10.3237L31.2062 21L2 50.25L13.75 62L43.0288 32.775L53.6512 30.4812ZM30.0263 37.49C29.7004 37.8904 29.2585 38.1801 28.7614 38.3193C28.2643 38.4585 27.7363 38.4404 27.2499 38.2674C26.7634 38.0945 26.3425 37.7752 26.0448 37.3535C25.7471 36.9317 25.5873 36.4281 25.5873 35.9119C25.5873 35.3956 25.7471 34.892 26.0448 34.4703C26.3425 34.0485 26.7634 33.7292 27.2499 33.5563C27.7363 33.3834 28.2643 33.3653 28.7614 33.5045C29.2585 33.6437 29.7004 33.9333 30.0263 34.3337C30.3888 34.7799 30.5865 35.3374 30.5861 35.9123C30.5856 36.4872 30.387 37.0444 30.0238 37.49H30.0263Z" fill="#F5821F "/>
+        </svg>
+          
         <p>Baterka</p>
       </div>
+    </div>
 
-      <div class="description__categories">
+      <div class="prop__categories description__categories">
         <h2>Kategorie</h2>
 
         <ul class="category__list">
@@ -153,46 +171,56 @@
       </div>
 
 
-      <svg class="prop__triangle triangle--bottom" viewBox="0 0 407 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0.999939 1L407.178 1V75L0.999939 1Z" fill="#231F20" stroke="#231F20"/>
-        </svg>
+    <svg class="prop__triangle triangle--bottom"
+          viewBox="0 0 407 76"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg">
+      <path d="M0.999939 1L407.178 1V75L0.999939 1Z" fill="#231F20"/>
+    </svg>
         
     </div>
+    <main class="main__container main--props">
 
-
-    <section class="proposition__satrts">
+    <section class="proposition__starts">
       <div class="item">
         <h2>Prezentace:</h2>
-        <p class="primary">16:00-16:45 hod</p>
+        <p class="primary"><b>16:00-16:45 hod</b></p>
       </div>
       <div class="item">
         <h2>Výklad trati:</h2>
-        <p class="primary">17:10 hod</p>
+        <p class="primary"><b>17:10 hod</b></p>
       </div>
     </section>
+
     <section class="proposition__times">
       <div class="item">
         <h2>Řádný čas závodu:</h2>
         <div class="item__main">
-          <img src="/images/icons/clock.svg" class="green" alt="ikona hodin">
-          <p>60 minut</p>
+          <svg class="green" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M31.9998 56.0001C35.1516 56.0001 38.2724 55.3793 41.1842 54.1732C44.0961 52.9671 46.7418 51.1992 48.9704 48.9706C51.199 46.742 52.9668 44.0963 54.173 41.1845C55.3791 38.2727 55.9998 35.1518 55.9998 32.0001C55.9998 28.8484 55.3791 25.7275 54.173 22.8157C52.9668 19.9039 51.199 17.2581 48.9704 15.0295C46.7418 12.8009 44.0961 11.0331 41.1842 9.82697C38.2724 8.62086 35.1516 8.00008 31.9998 8.00008C25.6346 8.00008 19.5301 10.5286 15.0293 15.0295C10.5284 19.5304 7.99984 25.6349 7.99984 32.0001C7.99984 38.3653 10.5284 44.4698 15.0293 48.9706C19.5301 53.4715 25.6346 56.0001 31.9998 56.0001ZM61.3332 32.0001C61.3332 48.2001 48.1998 61.3334 31.9998 61.3334C15.7998 61.3334 2.6665 48.2001 2.6665 32.0001C2.6665 15.8001 15.7998 2.66675 31.9998 2.66675C48.1998 2.66675 61.3332 15.8001 61.3332 32.0001ZM39.9998 43.7707L29.3332 33.1041V14.6667H34.6665V30.8961L43.7705 40.0001L39.9998 43.7707Z" />
+            </svg>
+            
+          <p><b>60 minut</b></p>
         </div>
       </div>
       <div class="item">
         <h2>Limit závodu:</h2>
         <div class="item__main">
-          <img src="/images/icons/clock.svg" class="red" alt="ikona hodin">
-          <p>80min</p>
+          <svg class="red" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M31.9998 56.0001C35.1516 56.0001 38.2724 55.3793 41.1842 54.1732C44.0961 52.9671 46.7418 51.1992 48.9704 48.9706C51.199 46.742 52.9668 44.0963 54.173 41.1845C55.3791 38.2727 55.9998 35.1518 55.9998 32.0001C55.9998 28.8484 55.3791 25.7275 54.173 22.8157C52.9668 19.9039 51.199 17.2581 48.9704 15.0295C46.7418 12.8009 44.0961 11.0331 41.1842 9.82697C38.2724 8.62086 35.1516 8.00008 31.9998 8.00008C25.6346 8.00008 19.5301 10.5286 15.0293 15.0295C10.5284 19.5304 7.99984 25.6349 7.99984 32.0001C7.99984 38.3653 10.5284 44.4698 15.0293 48.9706C19.5301 53.4715 25.6346 56.0001 31.9998 56.0001ZM61.3332 32.0001C61.3332 48.2001 48.1998 61.3334 31.9998 61.3334C15.7998 61.3334 2.6665 48.2001 2.6665 32.0001C2.6665 15.8001 15.7998 2.66675 31.9998 2.66675C48.1998 2.66675 61.3332 15.8001 61.3332 32.0001ZM39.9998 43.7707L29.3332 33.1041V14.6667H34.6665V30.8961L43.7705 40.0001L39.9998 43.7707Z" />
+            </svg>
+            
+          <p><b>80min</b></p>
         </div>
       </div>
-
+    </section>
 
 
       <section class="proposition__section">
         <h2>Penalizace:</h2>
         <p>Za každou minutu zpoždění (oproti řádnému času 60 min.) jsou 3 trestné body. Ty se odečtou od nasbíraného součtu.</p>
       </section>
-      <section class="proposition__section">
+      <section class="proposition__section section--bottom">
         <h2>Mapa:</h2>
         <p>Dvojice dostane jednu mapu s označenými kontrolami a jednu průvodku. Každá dvojice si sama zapíše popis kontrol.</p>
       </section>
@@ -200,7 +228,7 @@
 
 
   </main>
-
+</div>
 
   <footer class="page__footer">
     <div class="footer__sponsors">

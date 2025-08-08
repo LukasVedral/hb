@@ -22,6 +22,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    ;
     }
     .logo img{
       height: 40px;
@@ -523,22 +524,102 @@
     .proposition__short{
       background-color: var(--dark);
       position: relative;
+      color:white;
+      padding: 0.75rem 1rem;
+      display: grid;
+      grid-template-areas: "date date" "must-have categories";
+      grid-gap: 4rem;
     }
 
     .prop__triangle{
       position: absolute;
-      width: 100vw;
       left: -16px;
+      height: 74px;
+      width: calc(100% + 16px);
     }
     .triangle--top{
-      transform: translateY(calc(-100% + 1px));
+      transform: translateY(calc(-100% + 2px));
       top: 0;
     }
     .triangle--bottom{
       bottom: 0;
-      transform: translateY(calc(100% - 1px));
+      transform: translateY(calc(100% - 2px));
     }
 
+
+    .proposition__short > .props__item{
+      display: grid;
+      grid-template-areas: 
+      "when date"
+      "login date"
+      ;
+      grid-area: date;
+    }
+    .proposition__short > .props__item > .date{
+      grid-area: date;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+    }
+    .proposition__short > .props__item > .date img{
+      width: 100%;
+    }
+    .proposition__short > .props__item > header{
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+
+    .short__items{
+      grid-area: must-have;
+    }
+    .prop__categories{
+      grid-area: categories;
+    }
+
+  .main__container > .proposition__starts{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .proposition__starts > .item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .proposition__starts > .item > h2{
+    text-align: center;
+  }
+  .primary{
+    color: var(--primary);
+  }
+  .green{
+    color: #00FF26;
+    fill: #00FF26;
+  }
+  .red{
+    color: #FF0000;
+    fill: #FF0000;
+  }
+
+  .main__container > .proposition__times{
+    align-items: start;
+    gap: 1rem;
+  }
+  .proposition__times > .item{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .proposition__times .item__main{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+
+    
 
 
 
@@ -604,7 +685,6 @@
 
       .main__container{
         margin: 4rem;
-        max-width: 1200px;
       }
 
 
@@ -673,5 +753,43 @@
         right: 0;
       }
       
+
+
+      /*proposition*/
+
+      .proposition__short, .proposition__times{
+        position: absolute;
+      }
+      .proposition__short{
+        top: 164px;
+        right: 64px;
+      }
+      .proposition__times{
+        bottom: 0;
+        right: -250px;
+        transform: translateX(100%);
+
+      }
+      .proposition__times > .item{
+        width: 100%;
+        align-items: center;
+      }
+      .proposition__times .item__main{
+        justify-content: center;
+      }
+      .prop__triangle{
+        display: none;
+      }
+      .main--props{
+        width: 40%;
+      }
+      .section--bottom{
+        margin-bottom: 12rem;
+      }
+      .prop__container{
+        max-width: 1200px;
+        position: relative;
+        align-self: center;
+      }
     }
 }
