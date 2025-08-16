@@ -54,16 +54,16 @@
   </header>
   
   <main class="main__container main--applications">
-    <h1>Přihlášky</h1>
-    <p class="applications__text">V den závodu je možné se přihlásit přímo na prezentaci do max. kapacity 80 závodních dvojic.</p>
-    <button id="sign-up-btn">Sign Up</button>
-
+    <div class="applications__header">
+      <h1>Přihlášky</h1>
+      <p class="applications__text">V den závodu je možné se přihlásit přímo na prezentaci do max. kapacity 80 závodních dvojic.</p>
+      <button id="sign-up-btn" class="btn btn--primary primary--ligh">Přihlásit se</button>
+    </div>
     <section class="applications__table">
 
-      <table id="team-table">
+      <table id="team-table" class="team-table">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Název týmu</th>
             <th>Kategorie</th>
             <th>1. Závodník</th>
@@ -226,6 +226,20 @@
       </div>
     </div>
   </div>
+
+  <!-- Logout modal -->
+<div id="logout-modal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Odhlášení týmu</h2>
+    <label>Heslo: <input type="password" id="logout-password"></label>
+    <div class="modal-buttons">
+      <button id="confirm-logout">Odhlásit se</button>
+      <button id="close-logout-modal">Zavřít</button>
+    </div>
+  </div>
+</div>
+
+
 
   <script type="module" src="./src/scripts/hamburger.js"></script>
   <script type="module" src="./src/scripts/applications.js"></script>

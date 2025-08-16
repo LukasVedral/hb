@@ -69,19 +69,18 @@ function renderTable(teams) {
   teams.forEach(team => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td></td>
       <td>${team.teamName}</td>
       <td>${team.category}</td>
       <td>${team.racer1}</td>
       <td>${team.racer2}</td>
-      <td><button class="sign-out-btn" data-team="${team.teamName}" data-racer1="${team.racer1}" data-racer2="${team.racer2}">Odhlásit</button></td>
+      <td><button class="sign-out-btn" data-team="${team.teamName}" data-racer1="${team.racer1}" data-racer2="${team.racer2}">Odhlásit se</button></td>
     `;
     tableBody.appendChild(tr);
   });
 }
 
 
-
+/*
 document.querySelector("#team-table").addEventListener("click", async (e) => {
   if (e.target.classList.contains("sign-out-btn")) {
     const teamName = e.target.dataset.team;
@@ -108,6 +107,87 @@ document.querySelector("#team-table").addEventListener("click", async (e) => {
     }
   }
 });
+*/
+
+
+
+
+
+
+
+
+
+
+
+const logoutModal = document.getElementById("logout-modal");
+const closeLogoutBtn = document.getElementById("close-logout-modal");
+const confirmLogoutBtn = document.getElementById("confirm-logout");
+const logoutTeamNameEl = document.getElementById("logout-team-name");
+
+let logoutData = null; // uchováme si tým, který se chce odhlásit
+
+// Kliknutí na "Odhlásit se" v tabulce
+document.querySelector("#team-table").addEventListener("click", (e) => {
+  if (e.target.classList.contains("sign-out-btn")) {
+    const teamName = e.target.dataset.team;
+    const racer1 = e.target.dataset.racer1;
+    const racer2 = e.target.dataset.racer2;
+
+    logoutData = { teamName, racer1, racer2 }; // uložíme si
+    logoutTeamNameEl.textContent = `Opravdu chcete odhlásit tým "${teamName}"?`;
+    logoutModal.classList.remove("hidden");
+  }
+});
+
+// Zavření logout modalu
+closeLogoutBtn.addEventListener("click", () => {
+  logoutModal.classList.add("hidden");
+  logoutData = null;
+});
+
+// Potvrzení logoutu
+confirmLogoutBtn.addEventListener("click", async () => {
+  if (!logoutData) return;
+  const password = document.getElementById("logout-password").value;
+  if (!password) {
+    alert("Zadejte heslo!");
+    return;
+  }
+
+  const res = await fetch(API_URL, {
+    method: "POST",
+    body: JSON.stringify({
+      action: "remove",
+      ...logoutData,
+      password,
+    }),
+  });
+
+  const result = await res.json();
+  if (result.success) {
+    // Odeber z localStorage
+    let cached = JSON.parse(localStorage.getItem("teams") || "[]");
+    cached = cached.filter(
+      (t) =>
+        !(
+          t.teamName === logoutData.teamName &&
+          t.racer1 === logoutData.racer1 &&
+          t.racer2 === logoutData.racer2
+        )
+    );
+    localStorage.setItem("teams", JSON.stringify(cached));
+
+    fetchTeams();
+    logoutModal.classList.add("hidden");
+    document.getElementById("logout-password").value = "";
+    logoutData = null;
+  } else {
+    alert(result.message || "Odhlášení se nepodařilo.");
+  }
+});
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   fetchTeams();

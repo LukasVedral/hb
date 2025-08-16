@@ -3,11 +3,11 @@ a{
     color: var(--light);
 }
 
-a,p,li,span, .info__item h3{
+a,p,li,span, .info__item h3, td{
     font-family: "Space Grotesk", sans-serif;
     margin: 0;
 }
-h1,h2,h3,.info__title, .date__time, .podium__place, .category__text > strong{
+h1,h2,h3,.info__title, .date__time, .podium__place, .category__text > strong, th, #sign-up-btn{
     font-family: "Montserrat", sans-serif;
     margin: 0;
 }
