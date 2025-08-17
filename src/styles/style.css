@@ -657,6 +657,9 @@
     grid-area: name;
   }
 
+  button{
+    cursor: pointer;
+  }
  /*sign in form*/
   .modal {
     position: fixed;
@@ -666,11 +669,64 @@
   }
   
   .modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
     max-width: 500px;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--light);
+    padding: 2rem 2rem 0 2rem;margin: 2rem;
+    flex: 1;
+    position: relative;
+  }
+
+  .modal-content label {
+    position: relative;
+  }
+  .modal-content label input {
+    width: calc(100% - 1rem);
+    border: 2px solid var(--dark);
+    padding: .5rem;
+    border-radius: 8px;
+    background-color: var(--light);
+    color: var(--dark);
+  }
+
+  .modal-content p {
+    background-color: var(--light);
+    position: absolute;
+    transform: translateY(-50%);
+    left: 14px;
+    color: var(--primary);
+    font-size: .85rem;
+    padding: 0 .5rem;
+    /*z-index: 1;*/
+  }
+  .modal--logout{
+    padding: 2rem;
+  }
+  .modal--logout .signup-btn{
+    position: initial;
+  }
+  .close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1.5rem;
+    background:none;
+    border: none;
+  }
+  .signup-btn{
+    background: none;
+    padding: .5rem 1rem;
+    border-radius: 8px;
+    border: 2px solid var(--dark);
+    font-weight: 600;
+    position: absolute;
+    bottom: 43px;
+    right: 32px;
+  }
+  .signup-btn:hover{
+    background-color: var(--primary);
   }
   
   .hidden {
@@ -719,6 +775,65 @@
     grid-gap: 2rem;
   }
   
+
+
+
+
+  .category-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-sign{
+    position: absolute;
+    top: 32px;
+    left: 56px;
+    transform: translateY(-50%);
+  }
+  .selected-category {
+    width: 64px;
+    height: 64px;
+    border: 1px solid var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  .category-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    white-space: nowrap;
+    z-index: 1;
+  }
+
+  .category-list img {
+    background-color: var(--light);
+    width: 64px;
+    height: 64px;
+    border: 1px solid var(--dark);
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  .category-list img:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  .category-list img:last-child{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  .category-list img:hover {
+    transform: scale(1.1);
+  }
+
+  .category-list.show {
+    display: flex;
+  }
 
 
 

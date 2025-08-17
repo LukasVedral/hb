@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbxLnA6k9Mq0lF9F2LJ64_ODqweBSzqXmIc9vqO8WAhK3APYpmc59Ll2fnc2-2sW5iq7pA/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbyhL9rOh2N0cSkxBxs1Ipvo7b-QpihzaeuNgOf8GAqGqPpZV9jgqFlcWryZa-UoflqQkw/exec";
 
 const modal = document.getElementById("signup-modal");
 const closeModalBtn = document.getElementById("close-modal");
@@ -21,7 +21,7 @@ submitSignupBtn.addEventListener("click", async () => {
   const email2 = document.getElementById("email2").value;
   const password = document.getElementById("password").value;
 
-  if (!teamName || !category || !racer1 || !racer2 || !password) {
+  if (!teamName || !category || !racer1 || !racer2 || !email1 || !email2 || !password) {
     alert("Vyplň všechny povinné údaje");
     return;
   }
@@ -134,7 +134,6 @@ document.querySelector("#team-table").addEventListener("click", (e) => {
     const racer2 = e.target.dataset.racer2;
 
     logoutData = { teamName, racer1, racer2 }; // uložíme si
-    logoutTeamNameEl.textContent = `Opravdu chcete odhlásit tým "${teamName}"?`;
     logoutModal.classList.remove("hidden");
   }
 });
@@ -186,9 +185,49 @@ confirmLogoutBtn.addEventListener("click", async () => {
   }
 });
 
+const selectedCategory = document.getElementById("selectedCategory");
+const categoryList = document.getElementById("categoryList");
+const categoryInput = document.getElementById("category"); // správné ID!
+
+// Kliknutí na vybranou kategorii → rozbalí seznam
+selectedCategory.addEventListener("click", () => {
+  categoryList.classList.toggle("show");
+});
+
+// Kliknutí na konkrétní ikonu → uloží a sbalí
+categoryList.querySelectorAll("img").forEach(img => {
+  img.addEventListener("click", () => {
+    // nastavím ikonku
+    selectedCategory.innerHTML = "";
+    const clone = img.cloneNode(true); // naklonujeme obrázek i s atributy
+    selectedCategory.appendChild(clone);
+
+    // nastavím hidden input
+    categoryInput.value = img.dataset.value;
+
+    // zavřu dropdown
+    categoryList.classList.remove("show");
+  });
+});
+
+
+
+
+
+
+
+
+
 
 
 
 document.addEventListener("DOMContentLoaded", () => {
   fetchTeams();
 });
+
+
+
+
+
+
+

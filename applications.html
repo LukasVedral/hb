@@ -213,29 +213,58 @@
   <div id="signup-modal" class="modal hidden">
     <div class="modal-content">
       <h2>Přihlášení</h2>
-      <label>Název týmu: <input type="text" id="teamName"></label>
-      <label>Kategorie: <input type="text" id="category"></label>
-      <label>1. závodník: <input type="text" id="racer1"></label>
-      <label>1. závodník - email: <input type="email" id="email1"></label>
-      <label>2. závodník: <input type="text" id="racer2"></label>
-      <label>2. závodník - email: <input type="email" id="email2"></label>
-      <label>Heslo: <input type="password" id="password"></label>
+  
+      <label><p>Název týmu: </p><input type="text" id="teamName"></label>
+      <label><p>1. závodník: </p><input type="text" id="racer1"></label>
+      <label><p>1. závodník - email: </p><input type="email" id="email1"></label>
+      <label><p>2. závodník: </p><input type="text" id="racer2"></label>
+      <label><p>2. závodník - email: </p><input type="email" id="email2"></label>
+      <label><p>Heslo: </p><input type="password" id="password"></label>
+      <!-- DROPDOWN NA KATEGORIE -->
+      <div class="category-dropdown">
+        <div class="selected-category" id="selectedCategory"></div>
+        <div class="category-list" id="categoryList">
+          <img src="/images/categories/men.svg" data-value="MM">
+          <img src="/images/categories/women.svg" data-value="ŽŽ">
+          <img src="/images/categories/mix.svg" data-value="MŽ">
+          <img src="/images/categories/children.svg" data-value="DD">
+          <img src="/images/categories/podivini.svg" data-value="PO">
+        </div>
+        <svg  class="dropdown-sign" width="20" height="35" viewBox="0 0 20 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.976133 3.24L3.80547 0.413334L19.2161 15.8187C19.4645 16.0655 19.6617 16.3591 19.7962 16.6824C19.9307 17.0057 20 17.3525 20 17.7027C20 18.0529 19.9307 18.3996 19.7962 18.7229C19.6617 19.0463 19.4645 19.3398 19.2161 19.5867L3.80547 35L0.9788 32.1733L15.4428 17.7067L0.976133 3.24Z" fill="#231F20"/>
+        </svg>
+        <!-- Skryté pole, které se odesílá -->
+        <input type="hidden" id="category" name="category">
+      </div>
+  
+
+  
       <div class="modal-buttons">
-        <button id="submit-signup">Přihlásit se</button>
-        <button id="close-modal">Zavřít</button>
+        <button id="submit-signup" class="signup-btn">Přihlásit se</button>
+        <button id="close-modal" class="close">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect y="5.65674" width="8" height="42" transform="rotate(-45 0 5.65674)" fill="#231F20"/>
+          <rect x="29.6985" width="8" height="42" transform="rotate(45 29.6985 0)" fill="#231F20"/>
+          </svg>
+        </button>
       </div>
     </div>
   </div>
 
+
   <!-- Logout modal -->
   <div id="logout-modal" class="modal hidden">
-    <div class="modal-content">
+    <div class="modal-content modal--logout">
       <h2>Odhlášení týmu</h2>
-      <p id="logout-team-name"></p>  <!-- 👈 tento element musí existovat -->
       <label>Heslo: <input type="password" id="logout-password"></label>
       <div class="modal-buttons">
-        <button id="confirm-logout">Odhlásit se</button>
-        <button id="close-logout-modal">Zavřít</button>
+        <button id="confirm-logout" class="signup-btn">Odhlásit se</button>
+        <button id="close-logout-modal" class="close">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect y="5.65674" width="8" height="42" transform="rotate(-45 0 5.65674)" fill="#231F20"/>
+            <rect x="29.6985" width="8" height="42" transform="rotate(45 29.6985 0)" fill="#231F20"/>
+            </svg>
+        </button>
       </div>
     </div>
   </div>
