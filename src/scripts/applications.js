@@ -26,22 +26,41 @@ submitSignupBtn.addEventListener("click", async () => {
     return;
   }
 
-  await fetch(API_URL, {
-    method: "POST",
-    body: JSON.stringify({
-      action: "add",
-      teamName,
-      category,
-      racer1,
-      email1,
-      racer2,
-      email2,
-      password
-    }),
-  });
+  // 🔒 Zablokuj tlačítko, aby se nedalo spamovat
+  submitSignupBtn.disabled = true;
+  submitSignupBtn.textContent = "Odesílám...";
 
-  modal.classList.add("hidden");
-  fetchTeams();
+  try {
+    const res = await fetch(API_URL, {
+      method: "POST",
+      body: JSON.stringify({
+        action: "add",
+        teamName,
+        category,
+        racer1,
+        email1,
+        racer2,
+        email2,
+        password
+      }),
+    });
+
+    const result = await res.json();
+
+    if (result.success) {
+      modal.classList.add("hidden");
+      fetchTeams();
+    } else {
+      alert(result.message || "Nepodařilo se přihlásit tým.");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Chyba při komunikaci se serverem.");
+  } finally {
+    // 🔓 Povolit tlačítko zpátky
+    submitSignupBtn.disabled = false;
+    submitSignupBtn.textContent = "Přihlásit se";
+  }
 });
 
 
